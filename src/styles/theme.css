@@ -1,0 +1,41 @@
+/* ==========================================================================
+   theme.css - Votre identite visuelle
+   --------------------------------------------------------------------------
+   Ce fichier est charge APRES tokens.css : toute variable redefinie ici
+   remplace celle du design system commun.
+
+   Regles :
+   - ne surchargez que des tokens SEMANTIQUES (--color-primary, --font-sans...)
+   - verifiez chaque couple texte / fond avec un outil de contraste
+     (WebAIM Contrast Checker) : 4.5:1 minimum pour le texte.
+
+   La version de reference garde le theme par defaut. Exemple de theme
+   "vert foret" ci-dessous, a decommenter pour tester.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../../public/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: var(--blue-700); /* 6.7:1 sur blanc */
+    --color-primary-hover: var(--blue-800);
+    --color-primary-soft: #00174b;
+    --color-on-primary: var(--gray-0);
+
+    --color-bg: #000000;
+    --color-surface: #0b1c30;
+    --color-surface-muted: var(--gray-100);
+    --color-text: var(--gray-50); /* 17.7:1 */
+    --color-text-muted: var(--gray-200); /* 7.6:1 */
+    --color-border: var(--gray-200); /* decoratif uniquement */
+    --color-border-input: var(--gray-500); /* 4.8:1 : bordure de champ visible (WCAG 1.4.11) */
+    --color-focus: var(--blue-600);
+    --emplacement-icon: `.\assets\modeSombre\`;
+  }
+}

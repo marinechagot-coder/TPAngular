@@ -1,13 +1,22 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PageHeader } from './shared/page-header/page-header';
 
 @Component({
-  imports: [RouterOutlet, PageHeader],
+  imports: [RouterOutlet],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('tp');
+  // Valeurs affichees dans le gabarit avec {{ }}. Elles seront remplacees
+  // par les donnees de l'utilisateur connecte lors des seances suivantes.
+  protected readonly appName = 'IndCorp RH';
+  protected readonly userName = signal('Claude Martinez');
+
+  // Etat d'ouverture de la navigation sur mobile.
+  protected readonly navOpen = signal(false);
+
+  protected toggleNav(): void {
+    this.navOpen.update((open) => !open);
+  }
 }
