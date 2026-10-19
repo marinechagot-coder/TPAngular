@@ -1,8 +1,11 @@
 import { Component, signal } from '@angular/core';
+import { CommonModule, DatePipe } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Employee } from './models/employee';
+import { LEAVE_TYPE_LABELS, LeaveRequest } from './models/leave-request';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, DatePipe],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -19,4 +22,25 @@ export class App {
   protected toggleNav(): void {
     this.navOpen.update((open) => !open);
   }
+  //donnee utilisateur
+  protected readonly currentUser: Employee = {
+    id: 1,
+    firstName: 'Claude',
+    lastName: 'Martinez',
+    email: 'claude.martinez@indcorp.fr',
+    jobTitle: 'Responsable Atelier',
+    role: 'manager',
+    managerId: 4,
+    hiredAt: '1990-03-02',
+  };
+  //leaveRequest:
+  protected readonly nextLeave: LeaveRequest = {
+    id: 12,
+    employeeId: 1,
+    type: 'cp',
+    startDate: new Date('2026-10-26'),
+    endDate: new Date('2026-10-30'),
+    status: 'manager-pending',
+  };
+  protected readonly nextLeaveType = LEAVE_TYPE_LABELS[this.nextLeave.type];
 }
