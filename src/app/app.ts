@@ -4,9 +4,11 @@ import { RouterOutlet } from '@angular/router';
 import { Employee } from './models/employee';
 import { LEAVE_TYPE_LABELS, LeaveRequest } from './models/leave-request';
 import { Sidebar } from './layout/sidebar/sidebar';
+import { StatCard } from './features/dashboard/stat-card/stat-card';
+import { Topbar } from './layout/topbar/topbar';
 
 @Component({
-  imports: [RouterOutlet, DatePipe, Sidebar],
+  imports: [RouterOutlet, DatePipe, Sidebar, StatCard, Topbar],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

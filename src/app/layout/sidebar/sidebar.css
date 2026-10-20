@@ -24,6 +24,16 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
+.nav__element {
+  display: flex;
+  flex-direction: row;
+}
+.nav__txt {
+  display: none;
+  transition:
+    transform var(--transition),
+    visibility var(--transition);
+}
 .nav__link {
   display: flex;
   align-items: center;
@@ -41,12 +51,34 @@
   background-color: var(--color-surface-muted);
 }
 
+/* La page courante est identifiee par aria-current, pas par une classe :
+   le lecteur d'ecran annonce "page actuelle" et le style suit. */
+.nav__link[aria-current='page'] {
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
+}
+
+.nav__link .count {
+  margin-left: auto;
+}
+
+.nav__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+}
 @media (min-width: 40em) {
   .sidebar {
     padding: var(--space-4) var(--space-3);
   }
   .nav {
     flex-direction: column;
+  }
+  .nav__txt {
+    display: block;
+    transition:
+      transform var(--transition),
+      visibility var(--transition);
   }
   .nav__heading {
     padding-inline: var(--space-3);
