@@ -1,8 +1,8 @@
-.sidebar {
+:host {
   grid-area: sidebar;
   position: sticky;
-  top: calc(100vh - var(--sidebar-height));
-  height: var(--sidebar-height);
+  /*top: calc(100vh - var(--sidebar-height));
+  height: var(--sidebar-height);*/
   width: auto;
   transform: none;
   visibility: visible;

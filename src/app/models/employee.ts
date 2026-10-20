@@ -1,4 +1,4 @@
-type Role = 'employee' | 'manager' | 'rh' | 'admin';
+type Role = 'employee' | 'manager' | 'hr' | 'admin';
 
 export interface Employee {
   id: number;

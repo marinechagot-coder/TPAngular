@@ -62,6 +62,12 @@
           {{ nextLeave.endDate | date: 'dd/MM/yyyy' }}
         </p>
       </section>
+      <ul class="grid-auto list" role="list">
+        <li>
+          <app-stat-card label="Congés payés restants" [value]="10" unit="jours" [max]="25" />
+        </li>
+        <li><app-stat-card label="RTT restants" [value]="6" unit="jours" /></li>
+      </ul>
       <!-- Les pages de l'application s'afficheront ici (seance 5 : routage). -->
       <router-outlet />
     </div>
