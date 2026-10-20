@@ -1,5 +1,10 @@
 # Tp
 
+##Prérequis
+node version: 2.3.0
+js version: ~7.8.0
+Exercie fait avec chemin A
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.3.
 
 ## Development server
